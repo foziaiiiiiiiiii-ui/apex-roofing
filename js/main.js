@@ -6,6 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.btn').forEach((btn, i) => {
         const id = btn.id || ('btn_' + i);
         if (!btn.id) btn.id = id;
+        
+        // If button contains complex spans (like data-phone), right-clicking it should only edit the phone, not destroy HTML
+        const phoneSpan = btn.querySelector('[data-phone]');
+        if (phoneSpan) {
+            btn.title = 'Right-click to edit phone number';
+            btn.addEventListener('contextmenu', (e) => {
+                e.preventDefault(); e.stopPropagation();
+                // We dispatch the logic directly so we don't duplicate prompts
+                const n = prompt('New phone number:', phoneSpan.textContent.trim());
+                if (n && n.trim()) {
+                    localStorage.setItem('site-phone', n.trim());
+                    document.querySelectorAll('[data-phone]').forEach(el => {
+                        el.textContent = n.trim();
+                        const link = el.closest('a');
+                        if (link) link.href = 'tel:' + n.trim().replace(/\D/g, '');
+                    });
+                }
+            });
+            return;
+        }
+
         btn.title = 'Right-click to edit text';
         const saved = localStorage.getItem('btn_html_' + id);
         if (saved) btn.innerHTML = saved;
@@ -46,12 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('[data-phone]').forEach(el => {
         el.style.cursor = 'pointer';
-        el.title = 'Double-click to edit number';
-        el.addEventListener('dblclick', (e) => {
+        el.title = 'Right-click or Double-click to edit number';
+        const editPhone = (e) => {
             e.preventDefault(); e.stopPropagation();
             const n = prompt('New phone number:', el.textContent.trim());
             if (n && n.trim()) updateAllPhones(n.trim());
-        });
+        };
+        el.addEventListener('dblclick', editPhone);
+        el.addEventListener('contextmenu', editPhone);
     });
 
     // ══════════════════════════════════════════════════════
@@ -73,11 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
     updateAllCompanyNames(storedName);
 
     document.querySelectorAll('[data-company]').forEach(el => {
-        el.addEventListener('dblclick', (e) => {
+        el.title = 'Right-click or Double-click to edit company name';
+        const editCompany = (e) => {
             e.preventDefault(); e.stopPropagation();
+            // Prevent contenteditable from triggering
+            el.removeAttribute('contenteditable'); 
             const n = prompt('New company name:', el.textContent.trim());
             if (n && n.trim()) updateAllCompanyNames(n.trim());
-        });
+        };
+        el.addEventListener('dblclick', editCompany, true);
+        el.addEventListener('contextmenu', editCompany, true);
     });
 
     // ══════════════════════════════════════════════════════
