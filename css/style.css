@@ -42,6 +42,27 @@ header {
     overflow: visible; /* allow popup to escape */
 }
 
+/* ── NAVBAR LINKS ─────────────────────────────────────────── */
+.desktop-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    transition: color 0.2s;
+    font-size: 1.05rem;
+}
+.desktop-nav a:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 1024px) {
+    .desktop-nav { display: none; }
+}
+
 /* ── LOGO AREA ────────────────────────────────────────────── */
 #logo-area {
     position: relative;
@@ -243,7 +264,7 @@ header {
 .trust-item svg { width: 32px; height: 32px; fill: var(--primary); flex-shrink: 0; }
 
 /* ── SECTIONS ─────────────────────────────────────────────── */
-section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+section { padding: 9rem 0; border-bottom: 1px solid var(--border); }
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     text-align: center;
@@ -283,9 +304,63 @@ section { padding: 6rem 0; border-bottom: 1px solid var(--border); }
 .step-num { font-size: 4rem; font-weight: 900; color: var(--accent); -webkit-text-stroke: 1px var(--primary); line-height: 1; flex-shrink: 0; }
 .step-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
 
-/* ── REVIEWS ──────────────────────────────────────────────── */
-.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-.review-card { background: #fff; padding: 2rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s; }
+/* ── REVIEWS MARQUEE ──────────────────────────────────────── */
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Mask for fade effect on left and right edges */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.marquee-row {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    /* Move at a moderate speed: 20s */
+    animation: scroll-left 25s linear infinite;
+}
+
+.marquee-content.reverse {
+    animation: scroll-right 28s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 1rem)); } /* -50% because we duplicated the items */
+}
+
+@keyframes scroll-right {
+    from { transform: translateX(calc(-50% - 1rem)); }
+    to { transform: translateX(0); }
+}
+
+.review-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s;
+    width: 320px; /* Fixed width for smooth scroll calculations */
+    flex-shrink: 0;
+}
 .review-card:hover { transform: scale(0.97); }
 .stars { color: #fbbc04; font-size: 1.5rem; margin-bottom: 1rem; letter-spacing: 2px; }
 .review-card p { font-style: italic; margin-bottom: 1.5rem; }
@@ -362,10 +437,13 @@ footer p  { margin-bottom: 0.5rem; color: #9ca3af; }
 
 /* ── MOBILE ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
-    header { padding: 0 4%; }
-    #logo-name { font-size: 1.1rem; }
+    header { padding: 0 4%; justify-content: center; }
+    #nav-cta-btn { display: none !important; }
+    #logo-name { font-size: 1.65rem; }
+    #navbar-logo-img { width: 48px; height: 48px; }
     .hero { padding: 4rem 5%; }
-    .btn-xl { width: 100%; padding: 1rem; font-size: 1.1rem; }
+    .hero h1 { font-size: 2.2rem; line-height: 1.1; }
+    .btn-xl { width: 100%; padding: 1.25rem 1rem; font-size: 1.1rem; white-space: normal; line-height: 1.4; }
     .trust { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
     section { padding: 4rem 0; }
     .step { flex-direction: column; text-align: center; }

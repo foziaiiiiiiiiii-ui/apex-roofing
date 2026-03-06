@@ -55,6 +55,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ══════════════════════════════════════════════════════
+    // 3.5 COMPANY NAME – edit all instances
+    // ══════════════════════════════════════════════════════
+    const NAME_KEY = 'logo-name';
+    const storedName = localStorage.getItem(NAME_KEY) || 'Bulloch and Brown Roofing';
+
+    function updateAllCompanyNames(name) {
+        localStorage.setItem(NAME_KEY, name);
+        document.querySelectorAll('[data-company]').forEach(el => {
+            el.textContent = name;
+        });
+        const lpNameIn = document.getElementById('lp-name-input');
+        if (lpNameIn && lpNameIn.value !== name) {
+            lpNameIn.value = name;
+        }
+    }
+    updateAllCompanyNames(storedName);
+
+    document.querySelectorAll('[data-company]').forEach(el => {
+        el.addEventListener('dblclick', (e) => {
+            e.preventDefault(); e.stopPropagation();
+            const n = prompt('New company name:', el.textContent.trim());
+            if (n && n.trim()) updateAllCompanyNames(n.trim());
+        });
+    });
+
+    // ══════════════════════════════════════════════════════
     // 4. LOGO – click to open popup with URL, name, size
     // ══════════════════════════════════════════════════════
     const logoArea   = document.getElementById('logo-area');
@@ -69,18 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const lpCancel   = document.getElementById('lp-cancel-btn');
 
     const LOGO_KEY = 'logo-src';
-    const NAME_KEY = 'logo-name';
     const SIZE_KEY = 'logo-scale';
 
-    // Restore saved logo
+    // Restore saved logo (name is handled by updateAllCompanyNames)
     let currentScale = parseFloat(localStorage.getItem(SIZE_KEY)) || 1;
     if (localStorage.getItem(LOGO_KEY)) logoImg.src = localStorage.getItem(LOGO_KEY);
-    if (localStorage.getItem(NAME_KEY)) logoName.textContent = localStorage.getItem(NAME_KEY);
     logoImg.style.transform = `scale(${currentScale})`;
 
     function openLogoPopup(e) {
         e.stopPropagation();
-        if (logoPopup.classList.contains('open')) { logoPopup.classList.remove('open'); return; }
+        if (logoPopup.classList.contains('open')) return;
         lpImgInput.value  = localStorage.getItem(LOGO_KEY) || '';
         lpNameIn.value    = localStorage.getItem(NAME_KEY) || logoName.textContent.trim();
         lpSizeIn.value    = Math.round(currentScale * 50); // slider 10-100 → scale 0.2-2
@@ -90,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     logoArea.addEventListener('click', openLogoPopup);
+    logoPopup.addEventListener('click', (e) => e.stopPropagation());
 
     // Live size preview via slider
     lpSizeIn.addEventListener('input', () => {
@@ -98,7 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
         logoImg.style.transform = `scale(${scale})`;
     });
 
-    lpApply.addEventListener('click', () => {
+    lpApply.addEventListener('click', (e) => {
+        e.stopPropagation();
         const newSrc  = lpImgInput.value.trim();
         const newName = lpNameIn.value.trim();
         const scale   = lpSizeIn.value / 50;
@@ -106,25 +132,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (newSrc) {
             logoImg.src = newSrc;
             localStorage.setItem(LOGO_KEY, newSrc);
+        } else {
+            logoImg.src = "data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' width='36' height='36' fill='%23ff4500' xmlns='http://www.w3.org/2000/svg'><path d='M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.7l5 4.5V18h-2v-6H9v6H7v-7.8l5-4.5z'/></svg>";
+            localStorage.removeItem(LOGO_KEY);
         }
+        
         if (newName) {
-            logoName.textContent = newName;
-            localStorage.setItem(NAME_KEY, newName);
+            updateAllCompanyNames(newName);
+        } else {
+            localStorage.removeItem(NAME_KEY);
+            updateAllCompanyNames('Company Name');
         }
+
         currentScale = scale;
         logoImg.style.transform = `scale(${scale})`;
         localStorage.setItem(SIZE_KEY, scale);
         logoPopup.classList.remove('open');
     });
 
-    lpCancel.addEventListener('click', () => {
+    lpCancel.addEventListener('click', (e) => {
+        e.stopPropagation();
         // revert preview on cancel
         logoImg.style.transform = `scale(${currentScale})`;
         logoPopup.classList.remove('open');
-    });
-
-    document.addEventListener('click', (e) => {
-        if (logoArea && !logoArea.contains(e.target)) logoPopup.classList.remove('open');
     });
 
     // ══════════════════════════════════════════════════════
@@ -182,13 +212,80 @@ document.addEventListener('DOMContentLoaded', () => {
     // 8. GLOBAL PASTE → fill active modal/popup input
     // ══════════════════════════════════════════════════════
     document.addEventListener('paste', (e) => {
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable)) return;
+        
         const text = (e.clipboardData || window.clipboardData).getData('text');
         if (!text) return;
         if (imgModal.classList.contains('open'))  { e.preventDefault(); imgUrlIn.value  = text; }
         else if (logoPopup.classList.contains('open')) { e.preventDefault(); lpImgInput.value = text; }
     });
 
+    // ══════════════════════════════════════════════════════
+    // 9. TEAM MODAL
+    // ══════════════════════════════════════════════════════
+    const teamModal = document.getElementById('team-modal');
+    const tmCloseBtn = document.getElementById('tm-close-btn');
+    const tmImg = document.getElementById('tm-img');
+    const tmName = document.getElementById('tm-name');
+    const tmRole = document.getElementById('tm-role');
+    const tmDesc = document.getElementById('tm-desc');
+    const tmExtraContainer = document.getElementById('tm-extra-container');
+    let activeTeamCard = null;
+    let activeTeamExtra = null;
+
+    window.openTeamModal = function(card) {
+        if (!teamModal) return;
+        activeTeamCard = card;
+        
+        tmImg.src = card.querySelector('.tc-img').src;
+        tmName.textContent = card.querySelector('.tc-name').textContent;
+        tmRole.textContent = card.querySelector('.tc-role').textContent;
+        tmDesc.textContent = card.querySelector('.tc-desc').textContent;
+        
+        activeTeamExtra = card.querySelector('.team-extra');
+        if (activeTeamExtra) {
+            activeTeamExtra.style.display = 'block';
+            tmExtraContainer.innerHTML = '';
+            tmExtraContainer.appendChild(activeTeamExtra);
+        }
+        
+        teamModal.style.display = 'flex';
+        // tiny delay for animation
+        setTimeout(() => {
+            teamModal.style.opacity = '1';
+            teamModal.querySelector('.team-modal-box').style.transform = 'scale(1)';
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    };
+
+    function closeTeamModal() {
+        if (!teamModal || teamModal.style.display === 'none') return;
+        
+        teamModal.style.opacity = '0';
+        teamModal.querySelector('.team-modal-box').style.transform = 'scale(0.95)';
+        
+        setTimeout(() => {
+            teamModal.style.display = 'none';
+            document.body.style.overflow = '';
+            
+            if (activeTeamCard && activeTeamExtra) {
+                activeTeamExtra.style.display = 'none';
+                activeTeamCard.appendChild(activeTeamExtra);
+            }
+            activeTeamCard = null;
+            activeTeamExtra = null;
+        }, 200);
+    }
+
+    if (tmCloseBtn) tmCloseBtn.addEventListener('click', (e) => { e.stopPropagation(); closeTeamModal(); });
+    if (teamModal) teamModal.addEventListener('click', (e) => { if (e.target === teamModal) closeTeamModal(); });
+
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') { closeLightbox(); closeImgModal(); logoPopup.classList.remove('open'); }
+        if (e.key === 'Escape') { 
+            closeLightbox(); 
+            closeImgModal(); 
+            logoPopup.classList.remove('open'); 
+            closeTeamModal();
+        }
     });
 });

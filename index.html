@@ -15,7 +15,7 @@
         <img id="navbar-logo-img"
              src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' width='36' height='36' fill='%23ff4500' xmlns='http://www.w3.org/2000/svg'><path d='M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.7l5 4.5V18h-2v-6H9v6H7v-7.8l5-4.5z'/></svg>"
              alt="Logo">
-        <span id="logo-name" class="editable">Apex Roofing</span>
+        <span id="logo-name" class="editable" data-company>Bulloch and Brown Roofing</span>
 
         <!-- Logo Popup -->
         <div id="logo-popup">
@@ -42,17 +42,29 @@
         </div>
     </div>
 
+    <nav class="desktop-nav">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#team">Team</a>
+        <a href="#areas">Areas</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
     <a href="tel:5015550199" class="btn btn-nav" id="nav-cta-btn">CALL NOW:&nbsp;<span data-phone>(501) 555-0199</span></a>
 </header>
 
 <!-- ═══════ HERO ═══════ -->
 <div class="hero">
     <div class="container">
-        <h1 class="editable" id="edit_hero_h1">Little Rock's Most Trusted Roofers:<br>Get Your Free Inspection Within 24 Hours.</h1>
-        <p class="editable" id="edit_hero_p">Licensed, Insured, and 5-Star Rated. We handle the paperwork and insurance claims to get your roof replaced fast.</p>
-        <a href="tel:5015550199" class="btn btn-xl" id="hero-cta-btn">
-            Claim Free Inspection &amp; Quote:&nbsp;<span data-phone>(501) 555-0199</span>
-        </a>
+        <h1 class="editable" id="edit_hero_h1">We Build Roofs That Outlast The House.<br>Get Your Free Inspection Within 24 Hours.</h1>
+        <p class="editable" id="edit_hero_p">You have a roof problem. We have the solution. Licensed, Insured, and 5-Star Rated. We handle the paperwork, fight the insurance companies, and replace your roof faster than anyone else.</p>
+        <div class="hero-cta-wrapper" style="max-width: 600px; margin: 0 auto;">
+            <a href="tel:5015550199" class="btn btn-xl" id="hero-cta-btn" style="width: 100%; display: flex; flex-direction: column; gap: 4px; padding: 1.25rem 1rem;">
+                <span style="font-size: 1.1rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">Call Now</span>
+                <span data-phone style="font-size: 1.8rem; font-weight: 900;">(501) 555-0199</span>
+            </a>
+            <p class="editable" id="hero_cta_subtext" style="font-size: 0.95rem; margin-top: 0.85rem; color: var(--text-muted); text-align: center; font-weight: 500;">Call now to confirm about your Quote</p>
+        </div>
     </div>
 </div>
 
@@ -61,64 +73,64 @@
     <div class="container" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;">
         <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-            <span class="editable" id="edit_trust_1">Licensed &amp; Insured</span>
+            <span class="editable" id="edit_trust_1">Zero Risk Guarantee</span>
         </div>
         <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-            <span class="editable" id="edit_trust_2">500+ Local Projects</span>
+            <span class="editable" id="edit_trust_2">500+ Roofs Built</span>
         </div>
         <div class="trust-item">
             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-            <span class="editable" id="edit_trust_3">Lifetime Warranty</span>
+            <span class="editable" id="edit_trust_3">Lifetime Defense Warranty</span>
         </div>
     </div>
 </div>
 
 <!-- ═══════ SERVICES ═══════ -->
-<section>
+<section id="services">
     <div class="container">
-        <h2 class="section-title editable" id="edit_srv_title">Comprehensive Roofing Services</h2>
+        <h2 class="section-title editable" id="edit_srv_title">Everything You Need. Nothing You Don't.</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3 class="editable" id="edit_srv_1">Roof Replacement</h3>
-                <p class="editable" id="edit_srv_1_p">Complete tear-offs and new installations using top-grade architectural shingles with lifetime manufacturer warranties.</p>
+                <h3 class="editable" id="edit_srv_1">Total Roof Replacement</h3>
+                <p class="editable" id="edit_srv_1_p">Most roofers cut corners. We tear it down to the bone and build it back using top-tier architectural shingles that come with a lifetime warranty. Built to last.</p>
             </div>
             <div class="service-card">
-                <h3 class="editable" id="edit_srv_2">Storm Damage Repair</h3>
-                <p class="editable" id="edit_srv_2_p">Fast emergency tarping and comprehensive repairs for wind, hail, and severe weather damage in Little Rock.</p>
+                <h3 class="editable" id="edit_srv_2">Emergency Storm Repair</h3>
+                <p class="editable" id="edit_srv_2_p">When nature hits, you don't have time to wait. We deploy lightning-fast emergency tarping and execute permanent repairs so your home is immediately secure.</p>
             </div>
             <div class="service-card">
-                <h3 class="editable" id="edit_srv_3">Insurance Claims Help</h3>
-                <p class="editable" id="edit_srv_3_p">We work directly with your insurance adjuster to ensure your storm damage is fully covered without the hassle.</p>
+                <h3 class="editable" id="edit_srv_3">Insurance Claim Domination</h3>
+                <p class="editable" id="edit_srv_3_p">Insurance companies want to pay you less. We step in, handle the adjuster, and fight to get your entire roof covered. You literally just pay the deductible.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ═══════ PROCESS ═══════ -->
-<section style="background:var(--accent);">
+<section id="process" style="background:var(--accent);">
     <div class="container">
-        <h2 class="section-title editable" id="edit_proc_title">Our 3-Step Process</h2>
+        <h2 class="section-title editable" id="edit_proc_title">How We Get It Done. Fast.</h2>
         <div class="process-steps">
             <div class="step">
                 <span class="step-num">01</span>
                 <div class="step-content">
-                    <h3 class="editable" id="edit_proc_1">Free Video Inspection</h3>
-                    <p class="editable" id="edit_proc_1_p">We quickly dispatch a certified inspector with drone technology to get a full view of your roof and show you the damage on video.</p>
+                    <h3 class="editable" id="edit_proc_1">The Evidence Gather</h3>
+                    <p class="editable" id="edit_proc_1_p">We don't guess. We send a certified expert with drone tech to scan your roof for damage. We show you the HD video proof for free. Zero obligation.</p>
                 </div>
             </div>
             <div class="step">
                 <span class="step-num">02</span>
                 <div class="step-content">
-                    <h3 class="editable" id="edit_proc_2">Approval &amp; Planning</h3>
-                    <p class="editable" id="edit_proc_2_p">If you have damage, we help you file the claim and meet with your insurance adjuster to guarantee everything is covered.</p>
+                    <h3 class="editable" id="edit_proc_2">The Insurance Battle</h3>
+                    <p class="editable" id="edit_proc_2_p">If there's damage, we don't leave you alone. We meet the insurance adjuster on your roof, show them the proof, and force them to cover the replacement.</p>
                 </div>
             </div>
             <div class="step">
                 <span class="step-num">03</span>
                 <div class="step-content">
-                    <h3 class="editable" id="edit_proc_3">1-Day Installation</h3>
-                    <p class="editable" id="edit_proc_3_p">Our large local crews strip your old roof, install the new lifetime-warranted system, and do a complete magnetic nail sweep — usually in one day.</p>
+                    <h3 class="editable" id="edit_proc_3">The 1-Day Strike</h3>
+                    <p class="editable" id="edit_proc_3_p">Our massive crews show up, strip the old roof, install the new lifetime system, and magnet-sweep your yard for nails. Done in 24 hours.</p>
                 </div>
             </div>
         </div>
@@ -129,29 +141,80 @@
 <section>
     <div class="container">
         <h2 class="section-title editable" id="edit_review_title">Don't Take Our Word For It</h2>
-        <div class="reviews">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="editable" id="edit_rev_1">"Apex came out within 2 hours of my call after a huge storm. They tarped my roof, handled my insurance, and had a new roof up in a single day."</p>
-                <div class="reviewer">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="James T.">
-                    <span class="editable" id="edit_rev_1_name">James T. — Little Rock</span>
+        <div class="marquee-container">
+            <div class="marquee-row">
+                <div class="marquee-content">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_1">"Apex came out within 2 hours of my call after a huge storm. They tarped my roof, handled my insurance, and had a new roof up in a single day."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="James T.">
+                            <span class="editable" id="edit_rev_1_name">James T. — Little Rock</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_2">"Best roofers in Arkansas. They left my yard cleaner than they found it. The crew is polite, fast, and the new shingles look stunning."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="Sarah W.">
+                            <span class="editable" id="edit_rev_2_name">Sarah W. — Benton</span>
+                        </div>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_1_dup">"Apex came out within 2 hours of my call after a huge storm. They tarped my roof, handled my insurance, and had a new roof up in a single day."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="James T.">
+                            <span class="editable" id="edit_rev_1_name_dup">James T. — Little Rock</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_2_dup">"Best roofers in Arkansas. They left my yard cleaner than they found it. The crew is polite, fast, and the new shingles look stunning."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="Sarah W.">
+                            <span class="editable" id="edit_rev_2_name_dup">Sarah W. — Benton</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="editable" id="edit_rev_2">"Best roofers in Arkansas. They left my yard cleaner than they found it. The crew is polite, fast, and the new shingles look stunning."</p>
-                <div class="reviewer">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Sarah W.">
-                    <span class="editable" id="edit_rev_2_name">Sarah W. — Benton</span>
-                </div>
-            </div>
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="editable" id="edit_rev_3">"I couldn't believe they got my insurance to cover the entire replacement. I just paid the deductible and Apex handled everything else."</p>
-                <div class="reviewer">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="David M.">
-                    <span class="editable" id="edit_rev_3_name">David M. — Conway</span>
+
+            <div class="marquee-row marquee-row-reverse">
+                <div class="marquee-content reverse">
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_3">"I couldn't believe they got my insurance to cover the entire replacement. I just paid the deductible and Apex handled everything else."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="David M.">
+                            <span class="editable" id="edit_rev_3_name">David M. — Conway</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_4">"Professional, honest, and wildly efficient. Would absolutely use them again for any future roofing needs. Highly recommend."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="Mark L.">
+                            <span class="editable" id="edit_rev_4_name">Mark L. — Bryant</span>
+                        </div>
+                    </div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_3_dup">"I couldn't believe they got my insurance to cover the entire replacement. I just paid the deductible and Apex handled everything else."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="David M.">
+                            <span class="editable" id="edit_rev_3_name_dup">David M. — Conway</span>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="editable" id="edit_rev_4_dup">"Professional, honest, and wildly efficient. Would absolutely use them again for any future roofing needs. Highly recommend."</p>
+                        <div class="reviewer">
+                            <img src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><rect width='24' height='24' fill='%23f3f4f6'/><path d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z' fill='%23cbd5e1'/></svg>" alt="Mark L.">
+                            <span class="editable" id="edit_rev_4_name_dup">Mark L. — Bryant</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -169,8 +232,74 @@
     </div>
 </section>
 
+<!-- ═══════ TEAM ═══════ -->
+<section id="team" style="background:var(--accent);">
+    <div class="container">
+        <h2 class="section-title editable" id="edit_team_title">Meet Our Team</h2>
+        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; text-align: center;">
+            <div class="team-card" style="background: #fff; padding: 2.5rem 2rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s; cursor: pointer;" onclick="if(window.openTeamModal) openTeamModal(this)" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'" title="Click to view details">
+                <img class="tc-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&crop=faces&w=250&h=250&q=80" alt="Team 1" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center; margin-bottom: 1.5rem; border: 4px solid #fff; box-shadow: 0 0 0 3px var(--primary), 0 8px 16px rgba(0,0,0,0.1);">
+                <h3 class="editable tc-name" id="edit_team_1_name" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.25rem;">Michael Brown</h3>
+                <p class="editable tc-role" id="edit_team_1_role" style="font-size: 0.95rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">Founder & CEO</p>
+                <p class="editable tc-desc" id="edit_team_1_desc" style="font-size: 1rem;">20+ years of experience in commercial and residential roofing.</p>
+                
+                <div class="team-extra" style="display:none;">
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Skills & Expertise</h4>
+                    <p class="editable" id="edit_team_1_skills" style="margin-bottom:1.5rem;font-size:1rem;color:var(--text-muted);">Project Management, Commercial Roofing, Safety Compliance</p>
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Contact Email</h4>
+                    <p class="editable" id="edit_team_1_email" style="font-size:1rem;color:var(--text-muted);">michael@example.com</p>
+                </div>
+            </div>
+            <div class="team-card" style="background: #fff; padding: 2.5rem 2rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s; cursor: pointer;" onclick="if(window.openTeamModal) openTeamModal(this)" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'" title="Click to view details">
+                <img class="tc-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&crop=faces&w=250&h=250&q=80" alt="Team 2" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center; margin-bottom: 1.5rem; border: 4px solid #fff; box-shadow: 0 0 0 3px var(--primary), 0 8px 16px rgba(0,0,0,0.1);">
+                <h3 class="editable tc-name" id="edit_team_2_name" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.25rem;">Sarah Jenkins</h3>
+                <p class="editable tc-role" id="edit_team_2_role" style="font-size: 0.95rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">Operations Manager</p>
+                <p class="editable tc-desc" id="edit_team_2_desc" style="font-size: 1rem;">Ensures every project is completed safely, on time, and on budget.</p>
+                
+                <div class="team-extra" style="display:none;">
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Skills & Expertise</h4>
+                    <p class="editable" id="edit_team_2_skills" style="margin-bottom:1.5rem;font-size:1rem;color:var(--text-muted);">Logistics, Crew Scheduling, Budgeting</p>
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Contact Email</h4>
+                    <p class="editable" id="edit_team_2_email" style="font-size:1rem;color:var(--text-muted);">sarah@example.com</p>
+                </div>
+            </div>
+            <div class="team-card" style="background: #fff; padding: 2.5rem 2rem; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s; cursor: pointer;" onclick="if(window.openTeamModal) openTeamModal(this)" onmouseover="this.style.transform='scale(0.97)'" onmouseout="this.style.transform='scale(1)'" title="Click to view details">
+                <img class="tc-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&crop=faces&w=250&h=250&q=80" alt="Team 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center; margin-bottom: 1.5rem; border: 4px solid #fff; box-shadow: 0 0 0 3px var(--primary), 0 8px 16px rgba(0,0,0,0.1);">
+                <h3 class="editable tc-name" id="edit_team_3_name" style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.25rem;">David Smith</h3>
+                <p class="editable tc-role" id="edit_team_3_role" style="font-size: 0.95rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">Lead Project Estimator</p>
+                <p class="editable tc-desc" id="edit_team_3_desc" style="font-size: 1rem;">Specializes in insurance claims and provides transparent free estimates.</p>
+                
+                <div class="team-extra" style="display:none;">
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Skills & Expertise</h4>
+                    <p class="editable" id="edit_team_3_skills" style="margin-bottom:1.5rem;font-size:1rem;color:var(--text-muted);">Insurance Negotiation, Drone Inspections, Estimating</p>
+                    <h4 style="margin-bottom:0.5rem;font-weight:800;color:var(--text-main);font-size:1.1rem;">Contact Email</h4>
+                    <p class="editable" id="edit_team_3_email" style="font-size:1rem;color:var(--text-muted);">david@example.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ SERVICE AREAS ═══════ -->
+<section id="areas">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-title editable" id="edit_areas_title">Areas We Serve</h2>
+        <p class="editable" id="edit_areas_p" style="max-width: 600px; margin: 0 auto 3rem;">We are proud to provide top-tier roofing services to communities across Central Arkansas.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; max-width: 900px; margin: 0 auto;">
+            <span class="editable" id="edit_area_1" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Little Rock</span>
+            <span class="editable" id="edit_area_2" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">North Little Rock</span>
+            <span class="editable" id="edit_area_3" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Conway</span>
+            <span class="editable" id="edit_area_4" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Benton</span>
+            <span class="editable" id="edit_area_5" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Bryant</span>
+            <span class="editable" id="edit_area_6" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Sherwood</span>
+            <span class="editable" id="edit_area_7" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Jacksonville</span>
+            <span class="editable" id="edit_area_8" style="background: var(--accent); padding: 0.85rem 1.75rem; border-radius: 30px; font-weight: 700; border: 1px solid var(--border); transition: transform 0.2s; cursor: pointer;" onmouseover="this.style.transform='scale(0.95)'" onmouseout="this.style.transform='scale(1)'">Maumelle</span>
+        </div>
+    </div>
+</section>
+
 <!-- ═══════ FAQ ═══════ -->
-<section style="background:var(--accent);">
+<section id="faq" style="background:var(--accent);">
     <div class="container">
         <h2 class="section-title editable" id="edit_faq_title">Frequently Asked Questions</h2>
         <div class="faq-list">
@@ -189,7 +318,7 @@
 <footer>
     <div class="container">
         <h2 class="editable" id="edit_footer_title">Ready for a New Roof?</h2>
-        <p class="editable" id="edit_foot_1">Apex Roofing</p>
+        <p class="editable" id="edit_foot_1" data-company>Bulloch and Brown Roofing</p>
         <p class="editable" id="edit_foot_2">Serving Little Rock &amp; Central Arkansas</p>
         <p>Phone: <a href="tel:5015550199" data-phone style="color:#fff;font-weight:700;">(501) 555-0199</a></p>
         <a href="#top" class="btn btn-nav" id="footer-back-btn" style="margin-top:2rem;background:#333;">Back to Top ↑</a>
@@ -211,6 +340,20 @@
         <div class="img-modal-actions">
             <button class="btn-cancel" id="img-cancel-btn">Cancel</button>
             <button class="btn btn-nav" id="img-apply-btn">Apply</button>
+        </div>
+    </div>
+</div>
+
+<!-- TEAM MODAL -->
+<div id="team-modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 10000; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.2s ease;">
+    <div class="team-modal-box" style="background: #fff; border-radius: 20px; padding: 2.5rem; width: min(450px, 92vw); box-shadow: 0 30px 80px rgba(0,0,0,0.25); position: relative; text-align: center; transform: scale(0.95); transition: transform 0.2s ease;">
+        <button id="tm-close-btn" style="position: absolute; top: 1rem; right: 1.25rem; background: transparent; border: none; font-size: 1.8rem; cursor: pointer; color: var(--text-muted);">&times;</button>
+        <img id="tm-img" src="" alt="Team Member" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; object-position: center; margin-bottom: 1rem; border: 4px solid #fff; box-shadow: 0 0 0 3px var(--primary), 0 8px 16px rgba(0,0,0,0.1);">
+        <h3 id="tm-name" style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem; color: var(--text-main);">Name</h3>
+        <p id="tm-role" style="font-size: 1rem; color: var(--primary); font-weight: 700; margin-bottom: 0.75rem;">Role</p>
+        <p id="tm-desc" style="font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem;"></p>
+        <div id="tm-extra-container" style="text-align: left; background: var(--accent); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border);">
+            <!-- Extra info inserted here -->
         </div>
     </div>
 </div>
