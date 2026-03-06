@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Rock Roofers - Free Inspection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+<!-- ═══════ HEADER ═══════ -->
+<header>
+    <!-- Click logo to open settings popup -->
+    <div id="logo-area" title="Click to edit logo">
+        <img id="navbar-logo-img"
+             src="data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' width='36' height='36' fill='%23ff4500' xmlns='http://www.w3.org/2000/svg'><path d='M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.7l5 4.5V18h-2v-6H9v6H7v-7.8l5-4.5z'/></svg>"
+             alt="Logo">
+        <span id="logo-name" class="editable">Apex Roofing</span>
+
+        <!-- Logo Popup -->
+        <div id="logo-popup">
+            <h4>Logo Settings</h4>
+            <div class="lp-field">
+                <label for="lp-img-input">Logo Image URL</label>
+                <input type="text" id="lp-img-input" placeholder="https://example.com/logo.png">
+            </div>
+            <div class="lp-field">
+                <label for="lp-name-input">Company Name</label>
+                <input type="text" id="lp-name-input" placeholder="Apex Roofing">
+            </div>
+            <div class="lp-field">
+                <div class="lp-size-row">
+                    <label for="lp-size-input">Logo Size</label>
+                    <span id="lp-size-val">100%</span>
+                </div>
+                <input type="range" id="lp-size-input" min="10" max="200" value="50">
+            </div>
+            <div class="lp-actions">
+                <button class="lp-cancel" id="lp-cancel-btn">Cancel</button>
+                <button class="btn btn-nav" id="lp-apply-btn">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="tel:5015550199" class="btn btn-nav" id="nav-cta-btn">CALL NOW:&nbsp;<span data-phone>(501) 555-0199</span></a>
+</header>
+
+<!-- ═══════ HERO ═══════ -->
+<div class="hero">
+    <div class="container">
+        <h1 class="editable" id="edit_hero_h1">Little Rock's Most Trusted Roofers:<br>Get Your Free Inspection Within 24 Hours.</h1>
+        <p class="editable" id="edit_hero_p">Licensed, Insured, and 5-Star Rated. We handle the paperwork and insurance claims to get your roof replaced fast.</p>
+        <a href="tel:5015550199" class="btn btn-xl" id="hero-cta-btn">
+            Claim Free Inspection &amp; Quote:&nbsp;<span data-phone>(501) 555-0199</span>
+        </a>
+    </div>
+</div>
+
+<!-- ═══════ TRUST ═══════ -->
+<div class="trust">
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;">
+        <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span class="editable" id="edit_trust_1">Licensed &amp; Insured</span>
+        </div>
+        <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            <span class="editable" id="edit_trust_2">500+ Local Projects</span>
+        </div>
+        <div class="trust-item">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <span class="editable" id="edit_trust_3">Lifetime Warranty</span>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════ SERVICES ═══════ -->
+<section>
+    <div class="container">
+        <h2 class="section-title editable" id="edit_srv_title">Comprehensive Roofing Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3 class="editable" id="edit_srv_1">Roof Replacement</h3>
+                <p class="editable" id="edit_srv_1_p">Complete tear-offs and new installations using top-grade architectural shingles with lifetime manufacturer warranties.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="editable" id="edit_srv_2">Storm Damage Repair</h3>
+                <p class="editable" id="edit_srv_2_p">Fast emergency tarping and comprehensive repairs for wind, hail, and severe weather damage in Little Rock.</p>
+            </div>
+            <div class="service-card">
+                <h3 class="editable" id="edit_srv_3">Insurance Claims Help</h3>
+                <p class="editable" id="edit_srv_3_p">We work directly with your insurance adjuster to ensure your storm damage is fully covered without the hassle.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ PROCESS ═══════ -->
+<section style="background:var(--accent);">
+    <div class="container">
+        <h2 class="section-title editable" id="edit_proc_title">Our 3-Step Process</h2>
+        <div class="process-steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-content">
+                    <h3 class="editable" id="edit_proc_1">Free Video Inspection</h3>
+                    <p class="editable" id="edit_proc_1_p">We quickly dispatch a certified inspector with drone technology to get a full view of your roof and show you the damage on video.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-content">
+                    <h3 class="editable" id="edit_proc_2">Approval &amp; Planning</h3>
+                    <p class="editable" id="edit_proc_2_p">If you have damage, we help you file the claim and meet with your insurance adjuster to guarantee everything is covered.</p>
+                </div>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-content">
+                    <h3 class="editable" id="edit_proc_3">1-Day Installation</h3>
+                    <p class="editable" id="edit_proc_3_p">Our large local crews strip your old roof, install the new lifetime-warranted system, and do a complete magnetic nail sweep — usually in one day.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ REVIEWS ═══════ -->
+<section>
+    <div class="container">
+        <h2 class="section-title editable" id="edit_review_title">Don't Take Our Word For It</h2>
+        <div class="reviews">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="editable" id="edit_rev_1">"Apex came out within 2 hours of my call after a huge storm. They tarped my roof, handled my insurance, and had a new roof up in a single day."</p>
+                <div class="reviewer">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="James T.">
+                    <span class="editable" id="edit_rev_1_name">James T. — Little Rock</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="editable" id="edit_rev_2">"Best roofers in Arkansas. They left my yard cleaner than they found it. The crew is polite, fast, and the new shingles look stunning."</p>
+                <div class="reviewer">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Sarah W.">
+                    <span class="editable" id="edit_rev_2_name">Sarah W. — Benton</span>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="editable" id="edit_rev_3">"I couldn't believe they got my insurance to cover the entire replacement. I just paid the deductible and Apex handled everything else."</p>
+                <div class="reviewer">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80" alt="David M.">
+                    <span class="editable" id="edit_rev_3_name">David M. — Conway</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title editable" id="edit_gallery_title" style="margin-top:6rem;">Recent Projects</h2>
+        <p style="text-align:center;margin-bottom:2rem;">Click any photo to view full screen. Hover &amp; click ✎ to replace.</p>
+        <div class="gallery">
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Roof 1"><button class="gallery-edit-btn">✎ Replace</button></div>
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Roof 2"><button class="gallery-edit-btn">✎ Replace</button></div>
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Roof 3"><button class="gallery-edit-btn">✎ Replace</button></div>
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=1200&auto=format&fit=crop" alt="Roof 4"><button class="gallery-edit-btn">✎ Replace</button></div>
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?q=80&w=1200&auto=format&fit=crop" alt="Roof 5"><button class="gallery-edit-btn">✎ Replace</button></div>
+            <div class="gallery-wrap"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" alt="Roof 6"><button class="gallery-edit-btn">✎ Replace</button></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section style="background:var(--accent);">
+    <div class="container">
+        <h2 class="section-title editable" id="edit_faq_title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q1">Do you offer free inspections?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a1">Yes — 100% free, zero obligation. We give honest feedback on whether you need a repair, replacement, or nothing at all.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q2">Will my insurance premium go up?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a2">In Arkansas, insurers generally cannot raise your rates for an "Act of God" storm claim. We walk you through every step.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q3">How long does a full replacement take?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a3">Most Little Rock homes are done in a single day. Larger or complex roofs may take two days.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q4">What shingle materials do you use?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a4">Class-4 impact-resistant architectural shingles from Owens Corning and GAF — both carry lifetime limited warranties.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q5">Do you clean up after installation?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a5">Absolutely. We tarp the property, haul all debris, and run magnetic sweepers across your yard — we leave it cleaner than we found it.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q6">Do you offer financing?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a6">Yes! We offer 0% APR promotional periods and low monthly payments so a new roof is always affordable.</p></div></div>
+            <div class="faq-item"><div class="faq-question"><span class="editable" id="faq_q7">Are you licensed and insured in Arkansas?</span><span class="faq-icon">+</span></div><div class="faq-answer"><p class="editable" id="faq_a7">Yes. We carry full general liability and workers' comp insurance and hold all required Arkansas contractor licenses.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+    <div class="container">
+        <h2 class="editable" id="edit_footer_title">Ready for a New Roof?</h2>
+        <p class="editable" id="edit_foot_1">Apex Roofing</p>
+        <p class="editable" id="edit_foot_2">Serving Little Rock &amp; Central Arkansas</p>
+        <p>Phone: <a href="tel:5015550199" data-phone style="color:#fff;font-weight:700;">(501) 555-0199</a></p>
+        <a href="#top" class="btn btn-nav" id="footer-back-btn" style="margin-top:2rem;background:#333;">Back to Top ↑</a>
+    </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <img id="lightbox-img" src="" alt="Full size">
+    <button id="lightbox-close">✕ Close</button>
+</div>
+
+<!-- IMAGE REPLACE MODAL -->
+<div id="img-modal">
+    <div class="img-modal-box">
+        <h3>Replace Image</h3>
+        <p>Paste an image URL below (clipboard auto-fills).</p>
+        <input type="text" id="img-url-input" placeholder="https://example.com/image.jpg">
+        <div class="img-modal-actions">
+            <button class="btn-cancel" id="img-cancel-btn">Cancel</button>
+            <button class="btn btn-nav" id="img-apply-btn">Apply</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
