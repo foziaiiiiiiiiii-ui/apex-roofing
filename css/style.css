@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap');
-
 :root {
-    --primary: #ff4500;
-    --primary-hover: #e63e00;
+    --primary: #b83200;        /* WCAG AA on white: 5.2:1 contrast */
+    --primary-hover: #8f2700;
     --bg: #ffffff;
     --text-main: #111827;
-    --text-muted: #4b5563;
+    --text-muted: #374151;     /* Darker gray: 8.5:1 contrast on white */
     --accent: #f9fafb;
     --border: #e5e7eb;
     --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -207,13 +205,13 @@ header {
     border: none;
     cursor: pointer;
     transition: background 0.25s, box-shadow 0.25s, opacity 0.2s;
-    box-shadow: 0 4px 14px rgba(255,69,0,0.25);
+    box-shadow: 0 4px 14px rgba(184,50,0,0.25);
     text-align: center;
     white-space: nowrap;
     font-family: var(--font-main);
     font-size: inherit;
 }
-.btn:hover  { background: var(--primary-hover); box-shadow: 0 6px 20px rgba(255,69,0,0.35); }
+.btn:hover  { background: var(--primary-hover); box-shadow: 0 6px 20px rgba(184,50,0,0.35); }
 .btn:active { opacity: 0.85; }
 .btn-nav { padding: 0.75rem 1.5rem; font-size: 1rem; }
 .btn-xl  { padding: 1.25rem 2.5rem; font-size: 1.25rem; }
@@ -223,7 +221,7 @@ header {
     text-align: center;
     padding: 8rem 5%;
     background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.98)),
-                url('https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=1200&q=70&fm=webp') center/cover no-repeat;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 72px; /* sticks right under the header */
@@ -327,7 +325,7 @@ section {
     transition: transform 0.3s;
 }
 .step:hover { transform: scale(0.95); }
-.step-num { font-size: 4rem; font-weight: 900; color: var(--accent); -webkit-text-stroke: 1px var(--primary); line-height: 1; flex-shrink: 0; }
+.step-num { font-size: 4rem; font-weight: 900; color: var(--primary); line-height: 1; flex-shrink: 0; }
 .step-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800; }
 
 /* ── REVIEWS MARQUEE ──────────────────────────────────────── */
