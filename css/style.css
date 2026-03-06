@@ -1,9 +1,9 @@
 :root {
-    --primary: #b83200;        /* WCAG AA on white: 5.2:1 contrast */
-    --primary-hover: #8f2700;
+    --primary: #d63800;        /* WCAG AA 4.75:1 on white — vibrant orange */
+    --primary-hover: #b83200;
     --bg: #ffffff;
     --text-main: #111827;
-    --text-muted: #374151;     /* Darker gray: 8.5:1 contrast on white */
+    --text-muted: #374151;
     --accent: #f9fafb;
     --border: #e5e7eb;
     --font-main: 'Outfit', system-ui, -apple-system, sans-serif;
@@ -221,7 +221,7 @@ header {
     text-align: center;
     padding: 8rem 5%;
     background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.98)),
-                url('https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=20&fm=webp') center/cover no-repeat;
+                url('https://images.unsplash.com/photo-1632759145351-1d592919f522?auto=format&fit=crop&w=900&q=10&fm=webp') center/cover no-repeat;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 72px; /* sticks right under the header */
